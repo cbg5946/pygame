@@ -65,7 +65,6 @@ def main():
                 head = (SNAKE[0][0], SNAKE[0][1] - 1)
             elif key == pygame.K_DOWN:
                 head = (SNAKE[0][0], SNAKE[0][1] + 1)
-            print(head)
             
             if head in SNAKE or head[0] < 0 or head[0] >= W or head[1] < 0 or head[1] >= H: # 머리가 몸통에 부딫히거나 벽에 닿으면
                 message = myfont.render("GAME OVER!", True, (255, 255, 0)) # 게임오버
