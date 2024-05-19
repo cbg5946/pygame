@@ -182,11 +182,11 @@ def main():
                     fire = True # 총알 발사
         
         # 배경 그리기
-        back_x = (back_x + ship.step[0] / 2)%1600
-        back_y = (back_y + ship.step[1] / 2)%1600
+        back_x = (back_x + ship.step[0]/2) % 1600 # 배경 스크롤 무한(나누기 2는 원거리 배경 느리게 움직이는 효과)
+        back_y = (back_y + ship.step[1]/2) % 1600 # background scrolling 기법
         SURFACE.fill((0, 0, 0))
         SURFACE.blit(back_image, (-back_x, -back_y), (0, 0, 3200, 3200))
-        
+        print(back_x + ship.step[0] / 2, back_y + ship.step[1] / 2)
         # 각종 객체 그리기
         ship.draw()
         for shot in shots:
